@@ -2,30 +2,25 @@
 
 class StringBuilder {
     constructor(value) {
-        this._value = value;
+        this.value = value;
     }
-    get value() {
-        return this._value
+    get Value() {
+        return this.value
     }
     append(str) {
-        console.log(str);
-        this._value += str;
+        this.value += str;
     }
     prepend(str) {
-        this._value = str += this._value;
+        this.value = str += this.value;
     }
     pad(str) {
-        this._value = str += this._value += str;
+        this.value = str += this.value += str;
     }
 }
-
 const builder = new StringBuilder('.');
-
 builder.append('^');
-console.log(builder.value); // '.^'
-
+console.log(builder.Value); // '.^'
 builder.prepend('^');
-console.log(builder.value); // '^.^'
-
+console.log(builder.Value); // '^.^'
 builder.pad('=');
-console.log(builder.value); // '=^.^='
+console.log(builder.Value); // '=^.^='
