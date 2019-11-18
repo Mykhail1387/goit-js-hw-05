@@ -7,15 +7,20 @@ class StringBuilder {
     get Value() {
         return this.value
     }
+
     append(str) {
         this.value += str;
     }
+
     prepend(str) {
         this.value = str += this.value;
     }
+
     pad(str) {
-        this.value = str += this.value += str;
+        this.append(str);
+        this.prepend(str);
     }
+
 }
 const builder = new StringBuilder('.');
 builder.append('^');

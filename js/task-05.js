@@ -31,15 +31,16 @@ class Car {
     }
 
     accelerate(speed) {
-        if (this.isOn === true && this.maxSpeed > speed) {
+        if (this.isOn === true && this.maxSpeed >= this.speed + speed) {
             this.speed += speed;
         }
     }
 
     decelerate(speed) {
-        if (speed <= this.speed) {
+        if (this.speed - speed >= 0) {
             this.speed -= speed;
         }
+
     }
 
     drive(hours) {
